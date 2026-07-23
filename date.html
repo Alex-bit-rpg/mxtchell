@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Question For You MITCHELLE!! 💕</title>
+<link rel="stylesheet" href="date.css">
+</head>
+<body>
+
+<!-- SCREEN 1: The question -->
+ <div class="screen" id="questionScreen">
+  <div class="photo-frame">
+    <img src="images/photo1.jpg" class="photo active" alt="">
+    <img src="images/photo2.jpg" class="photo" alt="">
+    <img src="images/photo3.jpg" class="photo" alt="">
+  </div>
+  <div class="heart">💌</div>
+  <h1>Hey MITCHELLE!!</h1>
+  <h2>Will you go out with me?</h2>
+  <div class="sub">Just pick one below.</div>
+  <div class="button-row">
+    <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+    <button id="noBtn" onmouseenter="dodge(this)" onclick="dodge(this)" ontouchstart="dodge(this)">No</button>
+  </div>
+  <div class="no-count-msg" id="noMsg"></div>
+</div>
+
+<!-- SCREEN 2: She said yes, pick a date -->
+<div class="screen hidden" id="planScreen">
+  <div class="celebrate">🎉</div>
+  <h1>Yessssss!! Let's pick a date</h1>
+  <div class="sub">Choose when you're free — I'll be there.</div>
+
+  <div class="date-picker-card">
+    <label for="eventTitle">What are we calling this? 💕</label>
+    <input type="text" id="eventTitle" value="Date❤️" maxlength="60">
+
+    <label for="eventDate">Date</label>
+    <input type="date" id="eventDate">
+
+    <label for="eventTime">Time</label>
+    <input type="time" id="eventTime" value="19:00">
+
+    <label for="eventLocation">Where? (optional)</label>
+    <input type="text" id="eventLocation" placeholder="Somewhere nice...">
+
+    <label for="eventNote">Little note (optional)</label>
+    <textarea id="eventNote" placeholder="Can't wait to see you 🥰"></textarea>
+
+    <button id="confirmBtn" onclick="confirmDate()">Lock it in 📅</button>
+  </div>
+</div>
+
+<!-- SCREEN 3: Confirmation + calendar download -->
+<div class="screen hidden" id="doneScreen">
+  <div class="final-msg">
+    <div class="heart">🥰</div>
+    <h1 id="doneTitle">It's a date!</h1>
+    <div class="sub" id="doneSub"></div>
+    <a id="icsLink" class="download-link" download="date-night.ics">Add to Calendar 📆</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
